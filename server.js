@@ -96,7 +96,7 @@ function checkData(timestamp) {
         if (timestamp - data[i].timestamp > 5000) {
             data[i].offline = true;
         }
-        else if (data[i].offline == true || data[i].title == "") {
+        else if (data[i].offline === true || data[i].title == "") {
             data.splice(i)
         }
     }
