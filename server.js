@@ -94,7 +94,12 @@ function updateData(newObj, timestamp) {
 function checkData(timestamp) {
     for (let i = data.length - 1; i >= 0; i--) {
         if (timestamp - data[i].timestamp > 5000) {
+            if (data[i].offline === true) {
+                data.splice(i) 
+            }
+            else {
             data[i].offline = true;
+            }
         }
         else if (data[i].offline === true || data[i].title == "") {
             data.splice(i)
