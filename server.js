@@ -57,7 +57,7 @@ app.post('/post', (req, res) => {
 
     updateData(newObj, timestamp)
     //checkData(timestamp)
-    // res.send(data)
+     res.send(data)
 })
 
 //Updates Location Data
