@@ -85,6 +85,7 @@ function updateData(newObj, timestamp) {
         "type": newObj.type,
         "title": newObj.title,
         "world": newObj.world,
+        "offline": false,
         "timestamp": timestamp,
     })
 }
@@ -92,7 +93,10 @@ function updateData(newObj, timestamp) {
 //Checks if it has received data from a user for the last 5 seconds
 function checkData(timestamp) {
     for (let i = data.length - 1; i >= 0; i--) {
-        if (timestamp - data[i].timestamp > 5000 || data[i].title == "") {
+        if (timestamp - data[i].timestamp > 5000) {
+            data[i].offline = true;
+        }
+        else if (data[i].offline == true || data[i].title == "") {
             data.splice(i)
         }
     }
