@@ -92,7 +92,7 @@ function updateData(newObj, timestamp) {
 //Checks if it has received data from a user for the last 5 seconds
 function checkData(timestamp) {
     for (let i = data.length - 1; i >= 0; i--) {
-        if (timestamp - data[i].timestamp > 5000) {
+        if (timestamp - data[i].timestamp > 5000 || d.title == "") {
             data.splice(i)
         }
     }
